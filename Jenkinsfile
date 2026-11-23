@@ -13,13 +13,12 @@ pipeline {
                 echo 'Installing Juice Shop dependencies...'
                 sh 'node --version'
                 sh 'npm --version'
-                sh 'npm ci'
+                sh 'npm install --no-audit --no-fund'
             }
         }
 
         stage('Build Application') {
-            steps {
-                echo 'Building Juice Shop...'
+            steps {                echo 'Building Juice Shop...'
                 sh 'npm run build'
             }
         }
