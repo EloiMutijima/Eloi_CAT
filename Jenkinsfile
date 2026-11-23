@@ -13,7 +13,7 @@ pipeline {
                 echo 'Installing Juice Shop dependencies...'
                 sh 'node --version'
                 sh 'npm --version'
-                sh 'npm install --no-audit --no-fund'
+                sh 'CYPRESS_INSTALL_BINARY=0 npm install --no-audit --no-fund'
             }
         }
 
