@@ -39,7 +39,6 @@
               "node_modules/cookieconsent/build/cookieconsent.min.css"
             ],
             "allowedCommonJsDependencies": [
-
               "socket.io-client",
               "socket.io-parser",
               "debug",
@@ -72,7 +71,13 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": {
+                  "inline": false
+                }
+              },
               "outputHashing": "media",
               "sourceMap": false,
               "extractLicenses": true,
@@ -112,16 +117,23 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "src/tsconfig.spec.json",
-            "setupFiles": ["src/test-setup.ts"],
+            "setupFiles": [
+              "src/test-setup.ts"
+            ],
             "runnerConfig": true,
             "watch": false,
             "coverage": false,
-            "coverageExclude": ["src/hacking-instructor/**/*"]
+            "coverageExclude": [
+              "src/hacking-instructor/**/*"
+            ]
           },
           "configurations": {
             "coverage": {
               "coverage": true,
-              "coverageReporters": ["lcovonly", "html"]
+              "coverageReporters": [
+                "lcovonly",
+                "html"
+              ]
             }
           }
         },
